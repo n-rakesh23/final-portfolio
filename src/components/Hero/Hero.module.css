@@ -1,0 +1,281 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* bottom gradient fade into next section */
+.fadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* subtle grid lines */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(170,255,0,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(170,255,0,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  gap: 1.1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(170, 255, 0, 0.08);
+  border: 1px solid rgba(170, 255, 0, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+
+/* ── Glitch name ── */
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  position: relative;
+}
+
+.name::before,
+.name::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.name::before {
+  left: 2px;
+  text-shadow: -2px 0 #00f5ff;
+  animation: glitch1 5s infinite linear;
+}
+
+.name::after {
+  left: -2px;
+  text-shadow: 2px 0 #aaff00;
+  animation: glitch2 5s infinite linear 2.5s;
+}
+
+@keyframes glitch1 {
+  0%,  88%, 100% { clip-path: inset(100% 0 0 0); transform: translateX(0); }
+  90%  { clip-path: inset(10% 0 75% 0); transform: translateX(-4px); }
+  92%  { clip-path: inset(55% 0 25% 0); transform: translateX( 4px); }
+  94%  { clip-path: inset(30% 0 50% 0); transform: translateX(-2px); }
+  96%  { clip-path: inset(80% 0  5% 0); transform: translateX( 3px); }
+  98%  { clip-path: inset( 5% 0 85% 0); transform: translateX(-3px); }
+}
+
+@keyframes glitch2 {
+  0%,  83%, 100% { clip-path: inset(100% 0 0 0); transform: translateX(0); }
+  85%  { clip-path: inset(20% 0 65% 0); transform: translateX( 3px); }
+  87%  { clip-path: inset(60% 0 20% 0); transform: translateX(-3px); }
+  89%  { clip-path: inset(40% 0 40% 0); transform: translateX( 2px); }
+  91%  { clip-path: inset( 8% 0 80% 0); transform: translateX(-4px); }
+}
+
+/* ── Role ── */
+.role {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Typewriter ── */
+.typewriter {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.45rem);
+  color: var(--accent);
+  min-height: 2em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.typeText { }
+
+.cursor {
+  animation: blink 0.9s step-end infinite;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── CTA ── */
+.cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #000;
+  background: var(--accent);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  box-shadow: var(--glow-green), 0 4px 24px rgba(170,255,0,0.3);
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  transition: border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--glow-green);
+  transform: translateY(-2px);
+}
+
+/* ── Scroll hint ── */
+.scrollHint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.scrollLine {
+  width: 1.5px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1);    }
+  50%       { opacity: 1;   transform: scaleY(1.15); }
+}
+
+/* ── CSS Shooting Stars ──────────────────────────────── */
+.shootingStars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shootingStars span {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  opacity: 0;
+}
+
+/* Star 1 — lime */
+.shootingStars span:nth-child(1) {
+  width: 200px;
+  height: 1.5px;
+  top: 14%;
+  background: linear-gradient(90deg, transparent, #aaff00 60%, transparent);
+  animation: shoot1 11s linear infinite 0.5s;
+}
+/* Star 2 — cyan */
+.shootingStars span:nth-child(2) {
+  width: 260px;
+  height: 1.5px;
+  top: 38%;
+  background: linear-gradient(90deg, transparent, #00f5ff 60%, transparent);
+  animation: shoot1 15s linear infinite 4.5s;
+}
+/* Star 3 — lime, faster + higher */
+.shootingStars span:nth-child(3) {
+  width: 160px;
+  height: 1px;
+  top: 22%;
+  background: linear-gradient(90deg, transparent, #aaff00 60%, transparent);
+  animation: shoot1 9s linear infinite 8s;
+}
+/* Star 4 — white */
+.shootingStars span:nth-child(4) {
+  width: 120px;
+  height: 1px;
+  top: 60%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7) 60%, transparent);
+  animation: shoot1 13s linear infinite 11s;
+}
+
+@keyframes shoot1 {
+  0%   { transform: translateX(-320px) rotate(-18deg); opacity: 0; }
+  4%   { opacity: 1; }
+  45%  { transform: translateX(130vw) rotate(-18deg);  opacity: 0; }
+  100% { transform: translateX(130vw) rotate(-18deg);  opacity: 0; }
+}

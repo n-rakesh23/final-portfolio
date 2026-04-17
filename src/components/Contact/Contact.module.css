@@ -1,0 +1,111 @@
+.contact {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial glow behind the section */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── Text side ── */
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.sub {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  max-width: 420px;
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid rgba(170,255,0,0.2);
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  max-width: fit-content;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.emailLink:hover {
+  background: rgba(170,255,0,0.06);
+  border-color: var(--accent);
+  box-shadow: var(--glow-green);
+}
+
+/* Socials */
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.socialIcon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(170,255,0,0.07);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-green);
+}
+
+/* ── Orb side ── */
+.orbWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(170,255,0,0.12);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.04), transparent 70%);
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .orbWrap { display: none; }
+}
