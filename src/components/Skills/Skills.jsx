@@ -3,7 +3,7 @@ import {
   SiReact, SiNextdotjs, SiTailwindcss, SiHtml5,
   SiNodedotjs, SiExpress, SiSpring,
   SiPython, SiTensorflow, SiPytorch, SiScikitlearn, SiPandas,
-  SiDocker, SiKubernetes, SiGithubactions,
+  SiDocker, SiKubernetes, SiGithubactions,SiJenkins,
   SiJavascript, SiCplusplus,
 } from 'react-icons/si'
 import { FaJava, FaAws } from 'react-icons/fa'
@@ -47,6 +47,7 @@ const CATEGORIES = [
       { name: 'Docker',         level: 82, icon: <SiDocker />,         color: '#2496ed' },
       { name: 'Kubernetes',     level: 66, icon: <SiKubernetes />,     color: '#326ce5' },
       { name: 'GitHub Actions', level: 85, icon: <SiGithubactions />,  color: '#2088ff' },
+      { name: 'Jenkins',        level: 95, icon: <SiJenkins />,        color: '#d24939' },
     ],
   },
   {
