@@ -56,7 +56,7 @@ export default function Hero() {
           transition={{ delay: 0.15, duration: 0.5 }}
         >
           <FiMapPin size={12} />
-          Hyderabad, India
+          Bhubaneswar, India
         </motion.div>
 
         <motion.h1
