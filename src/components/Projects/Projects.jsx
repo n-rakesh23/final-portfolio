@@ -14,7 +14,7 @@ const PROJECTS = [
   {
     title: 'InddieMate',
     description:
-      'It's an energy drink brand which provides premium yerba mate to coustomers',
+      "It's an energy drink brand which provides premium yerba mate to customers",
     tech: ['MERN Stack', 'Socket.io', 'JWT Auth', 'Cloudinary'],
     github: 'https://github.com/n-rakesh23',
     live: 'https://inddiemate.com/',
