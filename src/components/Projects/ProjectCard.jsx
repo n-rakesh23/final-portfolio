@@ -73,7 +73,7 @@ export default function ProjectCard({ project, index }) {
       </div>
 
       <a
-        href={project.github}
+        href={project.live}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.viewBtn}
