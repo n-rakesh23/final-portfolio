@@ -6,26 +6,26 @@ const PROJECTS = [
   {
     title: 'DFGuard',
     description:
-      'A deep fake detection system using computer vision and deep learning to identify manipulated media content in real-time.',
-    tech: ['Python', 'TensorFlow', 'OpenCV', 'React', 'FastAPI'],
+      'A deep fake detection ,protection and prohibitation system using computer vision and deep learning to identify manipulated media content in real-time.',
+    tech: ['Python', 'TensorFlow', 'OpenCV', 'React', 'FastAPI','PyTorch'],
     github: 'https://github.com/n-rakesh23',
-    live: '#',
+    live: 'https://iamrakesh.site/',
   },
   {
-    title: 'IndieMate',
+    title: 'InddieMate',
     description:
-      'A platform for indie developers to find collaborators, share ideas, and build projects together. Think ProductHunt meets GitHub for solo builders.',
+      'It's an energy drink brand which provides premium yerba mate to coustomers',
     tech: ['MERN Stack', 'Socket.io', 'JWT Auth', 'Cloudinary'],
     github: 'https://github.com/n-rakesh23',
-    live: '#',
+    live: 'https://inddiemate.com/',
   },
   {
     title: 'Tribe',
     description:
-      'A community platform where users form micro-communities around shared interests, with real-time chat, events, and collaborative spaces.',
+      'A community & gaming  platform where users form micro-communities around shared interests, with real-time chat, events, and collaborative spaces.',
     tech: ['React', 'Node.js', 'MongoDB', 'WebSockets', 'Redis'],
     github: 'https://github.com/n-rakesh23',
-    live: '#',
+    live: 'https://staging.d3tpsi2vxzi57q.amplifyapp.com/',
   },
   {
     title: 'MathCanvas',
@@ -33,7 +33,7 @@ const PROJECTS = [
       'An interactive mathematics visualization tool for exploring graphs, calculus, linear algebra, and probability distributions in real time.',
     tech: ['React', 'D3.js', 'Math.js', 'WebGL'],
     github: 'https://github.com/n-rakesh23',
-    live: '#',
+    live: 'https://iamrakesh.site/',
   },
 ]
 
